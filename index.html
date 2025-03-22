@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>炫酷示爱页面</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f6b7d2, #a1c4fd);
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            animation: fadeIn 2s ease-in;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background: #ff6b81;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .heart {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            transform: rotate(-45deg);
+            animation: floatUp 5s infinite ease-in-out;
+        }
+
+        .heart:before, .heart:after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            top: -5px;
+            left: 0;
+        }
+
+        .heart:after {
+            top: 0;
+            left: 5px;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(-45deg);
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(-45deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>💖 你是我生命中的光 💖</h1>
+    <p>遇见你，是我最幸运的事情</p>
+    <button class="btn" onclick="showHearts()">点击获取惊喜</button>
+</div>
+
+<script>
+    function showHearts() {
+        for (let i = 0; i < 50; i++) {
+            let heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = `${Math.random() * 100}vw`;
+            heart.style.animationDuration = `${2 + Math.random() * 3}s`;
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+    }
+</script>
+</body>
+</html>
