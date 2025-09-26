@@ -1,174 +1,229 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>给龙葵燕的信</title>
-    <style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="public/css/bootstrap.min.css"
+    />
+    <title>在线简历</title>
+
+    <style type="text/css">
       body {
-        font-family: "Microsoft YaHei", sans-serif;
-        background-color: #f9f3f0;
-        color: #333;
-        line-height: 1.6;
-        margin: 0;
-        padding: 20px;
-        display: flex;
-        justify-content: center;
+        background-image: url(public/img/);
       }
-      .letter-container {
-        max-width: 600px;
+      .row {
+        height: auto;
+        margin: 20px 0;
+      }
+      .content {
         background-color: #fff;
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        position: relative;
-        border: 1px solid #e8d5d0;
+        box-shadow: 2px 2px 3px #ccc;
       }
-      .letter-header {
-        text-align: right;
-        margin-bottom: 20px;
-        color: #888;
-        font-size: 14px;
+      .padding {
+        padding: 5px;
       }
-      .letter-content {
-        padding: 0 10px;
+      .margin-top {
+        margin-top: 10px;
       }
-      h1 {
-        color: #d46a6a;
-        font-size: 24px;
-        margin-bottom: 30px;
-        font-weight: normal;
+      .logo {
+        width: 150px;
+        height: 150px;
       }
-      p {
-        margin-bottom: 15px;
-        text-align: justify;
-      }
-      .signature {
-        margin-top: 40px;
-        text-align: right;
-        font-style: italic;
-      }
-      .weather-icon {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2367a3d9"><path d="M6,18A6,6 0 0,1 12,12C12.69,12 13.34,12.12 13.95,12.34C14.5,11.96 15.13,11.72 15.81,11.65C15.54,10.81 15.4,9.92 15.4,9C15.4,5.69 17.69,3 21,3V5C18.24,5 16,7.24 16,10C16,10.73 16.16,11.41 16.44,12.03C16.83,12 17.22,12 17.61,12C18.38,12 19.13,12.09 19.85,12.25C20.19,12.35 20.53,12.47 20.86,12.61C21.28,12.79 21.65,13.03 22,13.31C21.38,13.81 20.74,14.25 20.08,14.63C19.5,14.25 18.85,14 18.16,13.93C17.38,14.92 16.28,15.6 15,15.86C15,16.58 15.13,17.27 15.36,17.91C14.77,18 14.15,18 13.5,18H6M18,16A2,2 0 0,1 20,18A2,2 0 0,1 18,20A2,2 0 0,1 16,18A2,2 0 0,1 18,16Z"/></svg>');
-        background-size: contain;
-        vertical-align: middle;
-        margin: 0 5px;
-      }
-      .book-icon {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23d46a6a"><path d="M18,22A2,2 0 0,0 20,20V4C20,2.89 19.1,2 18,2H12V9L9.5,7.5L7,9V2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18Z"/></svg>');
-        background-size: contain;
-        vertical-align: middle;
-        margin: 0 5px;
-      }
-      .tv-icon {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%239c6acc"><path d="M21,17H3V5H21M21,3H3A2,2 0 0,0 1,5V17A2,2 0 0,0 3,19H8V21H16V19H21A2,2 0 0,0 23,17V5A2,2 0 0,0 21,3Z"/></svg>');
-        background-size: contain;
-        vertical-align: middle;
-        margin: 0 5px;
-      }
-      .heart-icon {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff6b6b"><path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"/></svg>');
-        background-size: contain;
-        vertical-align: middle;
-        margin: 0 2px;
-      }
-      .highlight {
-        background-color: #f0e6ff;
-        padding: 0 3px;
-        border-radius: 3px;
-      }
-      @media (max-width: 600px) {
-        .letter-container {
-          padding: 20px;
-        }
-        h1 {
-          font-size: 20px;
-        }
+      .nav-title {
+        font-size: 20px;
       }
     </style>
   </head>
   <body>
-    <div class="letter-container">
-      <div class="letter-header">
-        <span id="current-date"></span>
+    <div class="container">
+      <div
+        class="padding margin-top"
+        style="border: 1px solid #ccc text-center"
+      >
+        <span class="nav-title" style="text-align: center; color: lightskyblue">
+          欢迎您浏览 在线简历！！！！</span
+        >
       </div>
-      <div class="letter-content">
-        <h1>亲爱的龙葵燕女士：</h1>
 
-        <p>
-          你好呀！<span class="heart-icon"></span> 给你写这封信，希望你能阅读。
-        </p>
-
-        <p>
-          我们加好友有一段时间了，但好像还没怎么好好聊过。你在江西工作那么忙，而我在上海读书，时间稍微自由一点，所以总想着——<span
-            class="highlight"
-            >"如果能多了解你就好了"</span
-          >。
-        </p>
-
-        <p>
-          我知道你每天很辛苦，可能没太多精力闲聊，所以我不急着要你马上回应什么。只是希望，如果你偶尔有空，我们可以随便聊聊，比如：
-        </p>
-
-        <ul style="padding-left: 20px">
-          <li>你下班后喜欢做什么放松？</li>
-          <li>
-            江西的天气怎么样？<span class="weather-icon"></span>
-            上海这边最近总是下雨……
-          </li>
-          <li>
-            或者，你最近有没有看什么有趣的<span class="tv-icon"></span>剧/<span
-              class="book-icon"
-            ></span
-            >书？
-          </li>
-        </ul>
-
-        <p>
-          我可能不太会找话题（有时候真的会把天聊死，先道个歉哈哈），但我会认真听你说。如果你不嫌弃，我们可以慢慢开始，互相了解。
-        </p>
-
-        <div class="signature">
-          <p>期待你的消息</p>
-          <p>此致<br />敬礼</p>
+      <div class="row">
+        <div class="col-lg-3 mr-auto content rounded padding text-center">
+          <div class="padding">
+            <img src="public/img/" class="logo rounded-circle" />
+            <h6>*瑞</h6>
+            <span>后端工程师/上海</span>
+          </div>
+          <div>
+            <span class="text-left border-bottom">
+              <span></span> 基本信息
+            </span>
+            <div class="row">
+              <div class="col-5">个人信息</div>
+              <div class="col-7">*瑞/男/23岁</div>
+            </div>
+            <div class="row">
+              <div class="col-5">学校地址</div>
+              <div class="col-7">上海市浦东新区</div>
+            </div>
+            <div class="row">
+              <div class="col-5">期望薪资</div>
+              <div class="col-7">10k-15k</div>
+            </div>
+            <div>
+              <span class="text-left border-bottom">
+                <span></span>联系方式
+              </span>
+              <div class="row">
+                <div class="col-5">手机号</div>
+                <div class="col-7">123-4568-4587</div>
+              </div>
+              <div class="row">
+                <div class="col-5">邮箱</div>
+                <div class="col-7">000001285@qq.com</div>
+              </div>
+              <div class="row">
+                <div class="col-5">个人主页</div>
+                <div class="col-7"><a href="#">个人主页</a></div>
+              </div>
+            </div>
+            <div>
+              <span class="text-left border-bottom">
+                <span></span> 个人技能
+              </span>
+              <div class="row">
+                <div class="col-5">HTML/CSS</div>
+                <div class="col-7 progress-bar"></div>
+              </div>
+              <div class="row">
+                <div class="col-5">Python</div>
+                <div
+                  class="col-7 progress-bar"
+                  style="background-color: grey"
+                ></div>
+              </div>
+              <div class="row">
+                <div class="col-5">JAVA</div>
+                <div
+                  class="col-7 progress-bar"
+                  style="background-color: salmon"
+                ></div>
+              </div>
+              <div class="row">
+                <div class="col-5">MySql/Neo4j</div>
+                <div
+                  class="col-7 progress-bar"
+                  style="background-color: skyblue"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8 content rounded padding margin-top">
+          <div>
+            <span
+              class="
+                text-left
+                border-bottom
+                d-block
+                margin-top
+                nav-title
+                padding
+              "
+            >
+              <span></span>教育经历
+            </span>
+            <div class="row">
+              <div class="col-5">
+                被罚你三号各个部分让他有机会犯规被罚你三号各个部分让他有机会
+              </div>
+              <div class="col-7 text-right">2023-5————2023-9</div>
+            </div>
+            <div class="row">
+              <div class="col-5">
+                被罚你三号各个部分让他有机会犯规被罚你三号各个部分让他有机会
+              </div>
+              <div class="col-7 text-right">2023-5————2023-9</div>
+            </div>
+          </div>
+          <div>
+            <span
+              class="
+                text-left
+                border-bottom
+                d-block
+                margin-top
+                nav-title
+                padding
+              "
+            >
+              <span></span>项目经历
+            </span>
+            <div class="row">
+              <div class="col-5">
+                被罚你三号各个部分让他有机会犯规被罚你三号各个部分让他有机会
+              </div>
+              <div class="col-7 text-right">2023-5————2023-9</div>
+            </div>
+            <div class="row">
+              <div class="col-5">
+                被罚你三号各个部分让他有机会犯规被罚你三号各个部分让他有机会
+              </div>
+              <div class="col-7 text-right">2023-5————2023-9</div>
+            </div>
+          </div>
+          <div>
+            <span
+              class="
+                text-left
+                border-bottom
+                d-block
+                margin-top
+                nav-title
+                padding
+              "
+            >
+              <span class="glyphicon glyphicon-th-list"></span>实习经历
+            </span>
+            <div class="row">
+              <div class="col-5">
+                被罚你三号各个部分让他有机会犯规被罚你三号各个部分让他有机会
+              </div>
+              <div class="col-7 text-right">2023-5————2023-9</div>
+            </div>
+            <div class="row">
+              <div class="col-5">
+                被罚你三号各个部分让他有机会犯规被罚你三号各个部分让他有机会
+              </div>
+              <div class="col-7 text-right">2023-5————2023-9</div>
+            </div>
+          </div>
+          <div>
+            <span
+              class="
+                text-left
+                border-bottom
+                d-block
+                margin-top
+                nav-title
+                padding
+              "
+            >
+              <span></span>自我评价
+            </span>
+            <div class="row">
+              <div class="col-5">
+                被罚你三号各个部分让他有机会犯规被罚你三号各个部分让他有机会
+              </div>
+              <div class="col-7 text-right">2023-5————2023-9</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <script>
-      // 动态显示当前日期
-      const now = new Date();
-      const options = {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-        weekday: "long",
-      };
-      document.getElementById("current-date").textContent =
-        now.toLocaleDateString("zh-CN", options);
-
-      // 添加一些简单的交互效果
-      document.querySelectorAll("p").forEach((p) => {
-        p.addEventListener("mouseover", function () {
-          this.style.transition = "all 0.3s ease";
-          this.style.transform = "translateX(5px)";
-        });
-        p.addEventListener("mouseout", function () {
-          this.style.transform = "translateX(0)";
-        });
-      });
-    </script>
+    <script src="public/js/bootstrap.min.js"></script>
+    <script src="public/js/"></script>
   </body>
 </html>
